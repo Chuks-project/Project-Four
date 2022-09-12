@@ -258,7 +258,7 @@ AngularJS provides a web framework for creating dynamic views in your web applic
 
 - Cpoy and paste the code below into index.html file:
 
-<!doctype html>
+  <!doctype html>
     <html ng-app="myApp" ng-controller="myCtrl">
     <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -294,21 +294,18 @@ AngularJS provides a web framework for creating dynamic views in your web applic
         <th>Isbn</th>
         <th>Author</th>
         <th>Pages</th>
-
-      </tr>
+     </tr>
       <tr ng-repeat="book in books">
         <td>{{book.name}}</td>
         <td>{{book.isbn}}</td>
         <td>{{book.author}}</td>
         <td>{{book.pages}}</td>
-
-        <td><input type="button" value="Delete" data-ng-click="del_book(book)"></td>
+       <td><input type="button" value="Delete" data-ng-click="del_book(book)"></td>
       </tr>
       </table>
       </div>
       </body>
       </html>
-
 
 
 - Change the directory back up to Books:
