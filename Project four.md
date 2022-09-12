@@ -108,25 +108,25 @@ Copy and paste the web server code below into the server.js file:
     });
     
     
-    
-   ### Step 3: Install Express and set up routes to the server
   
- - Install mongoose with the command below:
+ 
+### Step 3: Install Express and set up routes to the server
+- Install mongoose with the command below:
 
-      sudo npm install express mongoose
+  `sudo npm install express mongoose`
   
 - In ‘Books’ folder, create a folder named apps
 
-  mkdir apps && cd apps
+  `mkdir apps && cd apps`
   
 - Create a file named routes.js
 
-  vi routes.js
+  `vi routes.js`
   
 - Copy and paste the code below into routes.js:
 
   
-    var Book = require('./models/book');
+  var Book = require('./models/book');
   module.exports = function(app) {
   app.get('/book', function(req, res) {
   Book.find({}, function(err, result) {
