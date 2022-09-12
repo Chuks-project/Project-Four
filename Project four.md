@@ -1,4 +1,4 @@
-# MEAN STACK DEPLOYMENT TO UBUNTU IN AWS
+## MEAN STACK DEPLOYMENT TO UBUNTU IN AWS
 
  Now, when you have already learned how to deploy LAMP, LEMP and MERN Web stacks – it is time to get yourself familiar with MEAN stack and deploy it to Ubuntu server.
 
@@ -9,12 +9,12 @@ MEAN Stack is a combination of following components:
 - Angular (Front-end application framework) – Handles Client and Server Requests
 - Node.js (JavaScript runtime environment) – Accepts requests and displays results to end user
 
-# Step 0 – Preparing prerequisites
+### Step 0 – Preparing prerequisites
 In order to complete this project you will need an AWS account and a virtual server with Ubuntu Server OS.
 Refer back to Project one step 0
 
 
-# Step 1: Install NodeJs
+### Step 1: Install NodeJs
 
 - Update ubuntu by running the command below:
 
@@ -38,7 +38,7 @@ Refer back to Project one step 0
   
   
   
-# Step 2: Install MongoDB
+### Step 2: Install MongoDB
 
 Mongodb is a Document based database suitable for semi-structured data.
 
@@ -109,7 +109,7 @@ Copy and paste the web server code below into the server.js file:
     
     
     
-   ## Step 3: Install Express and set up routes to the server
+   ### Step 3: Install Express and set up routes to the server
   
   - Install mongoose with the command below:
 
@@ -196,7 +196,7 @@ module.exports = mongoose.model('Book', bookSchema);
 
 
 
-# Step 4 – Access the routes with AngularJS
+### Step 4 – Access the routes with AngularJS
 
 AngularJS provides a web framework for creating dynamic views in your web applications. In this tutorial, we use AngularJS to connect our web page with Express and perform actions on our book register.
 
@@ -215,46 +215,43 @@ AngularJS provides a web framework for creating dynamic views in your web applic
 
 - Copy and paste the Code below (controller configuration defined) into the script.js file.
 
-
-
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $http) {
-  $http( {
+ var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http) {
+    $http( {
     method: 'GET',
     url: '/book'
-  }).then(function successCallback(response) {
-    $scope.books = response.data;
-  }, function errorCallback(response) {
-    console.log('Error: ' + response);
-  });
-  $scope.del_book = function(book) {
-    $http( {
-      method: 'DELETE',
-      url: '/book/:isbn',
-      params: {'isbn': book.isbn}
     }).then(function successCallback(response) {
-      console.log(response);
+    $scope.books = response.data;
     }, function errorCallback(response) {
-      console.log('Error: ' + response);
+    console.log('Error: ' + response);
     });
-  };
-  $scope.add_book = function() {
+    $scope.del_book = function(book) {
+    $http( {
+    method: 'DELETE',
+    url: '/book/:isbn',
+    params: {'isbn': book.isbn}
+    }).then(function successCallback(response) {
+    console.log(response);
+    }, function errorCallback(response) {
+    console.log('Error: ' + response);
+    });
+    };
+    $scope.add_book = function() {
     var body = '{ "name": "' + $scope.Name + 
     '", "isbn": "' + $scope.Isbn +
     '", "author": "' + $scope.Author + 
     '", "pages": "' + $scope.Pages + '" }';
     $http({
-      method: 'POST',
-      url: '/book',
-      data: body
+    method: 'POST',
+    url: '/book',
+    data: body
     }).then(function successCallback(response) {
-      console.log(response);
+    console.log(response);
     }, function errorCallback(response) {
-      console.log('Error: ' + response);
+    console.log('Error: ' + response);
     });
-  };
-});
-
+    };
+    });
 
 
 - In public folder, create a file named index.html:
@@ -263,9 +260,7 @@ app.controller('myCtrl', function($scope, $http) {
 
 - Cpoy and paste the code below into index.html file:
 
-
-
-    <!doctype html>
+<!doctype html>
     <html ng-app="myApp" ng-controller="myCtrl">
     <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
