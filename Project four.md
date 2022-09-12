@@ -125,7 +125,7 @@ Copy and paste the web server code below into the server.js file:
   
 - Copy and paste the code below into routes.js:
 
-  
+```  
   var Book = require('./models/book');
   module.exports = function(app) {
   app.get('/book', function(req, res) {
@@ -163,7 +163,7 @@ Copy and paste the web server code below into the server.js file:
   res.sendfile(path.join(__dirname + '/public', 'index.html'));
   });
   };
-
+```
 
 
 
@@ -179,6 +179,7 @@ Copy and paste the web server code below into the server.js file:
 
 - Copy and paste the code below into ‘book.js’
 
+```
   var mongoose = require('mongoose');
   var dbHost = 'mongodb://localhost:27017/test';
   mongoose.connect(dbHost);
@@ -192,7 +193,7 @@ Copy and paste the web server code below into the server.js file:
   });
   var Book = mongoose.model('Book', bookSchema);
   module.exports = mongoose.model('Book', bookSchema);
-
+```
 
 ### Step 4 – Access the routes with AngularJS
 
@@ -213,6 +214,7 @@ AngularJS provides a web framework for creating dynamic views in your web applic
 
 - Copy and paste the Code below (controller configuration defined) into the script.js file.
 
+ ```
  var app = angular.module('myApp', []);
     app.controller('myCtrl', function($scope, $http) {
     $http( {
@@ -250,7 +252,7 @@ AngularJS provides a web framework for creating dynamic views in your web applic
     });
     };
     });
-
+```
 
 - In public folder, create a file named index.html:
 
@@ -258,7 +260,8 @@ AngularJS provides a web framework for creating dynamic views in your web applic
 
 - Cpoy and paste the code below into index.html file:
 
-  <!doctype html>
+```
+<!doctype html>
     <html ng-app="myApp" ng-controller="myCtrl">
     <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -306,7 +309,7 @@ AngularJS provides a web framework for creating dynamic views in your web applic
       </div>
       </body>
       </html>
-
+```
 
 - Change the directory back up to Books:
 
