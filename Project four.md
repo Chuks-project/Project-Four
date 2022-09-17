@@ -18,23 +18,23 @@ Refer back to Project one step 0
 
 - Update ubuntu by running the command below:
 
- sudo apt update
+ `sudo apt update`
 
 - Upgrade ubuntu by running the command below:
 
-  sudo apt upgrade
+  `sudo apt upgrade`
 
 - Add certificates:
 
 
-    sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+    `sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
 
-    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -`
     
     
  - Install NodeJS:
 
-  sudo apt install -y nodejs
+  `sudo apt install -y nodejs`
   
   
   
@@ -46,25 +46,28 @@ Run the commands below to seed the database add momgodb repository to your Ubunt
 
 
 
-`sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6`
+ `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6`
 
 
-`echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list`
+ `echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list`
 
 
 
 
 - Install MongoDB:
 
-   sudo apt install -y mongodb
+   `sudo apt install -y mongodb`
+
 
 - Start The server:
 
-  sudo service mongodb start
+` sudo service mongodb start`
+
 
 - Verify that the service is up and running
 
-   sudo systemctl status mongodb
+  `sudo systemctl status mongodb`
+
 
 - Same-like image will appear on your Terminal as seen below:
 
@@ -75,11 +78,11 @@ Run the commands below to seed the database add momgodb repository to your Ubunt
 
 - Install npm – Node package manager:
 
-  sudo apt install -y npm
+  `sudo apt install -y npm`
 
 - Install body-parser package:
 
-  sudo npm install body-parser
+  `sudo npm install body-parser`
 
 - Create a folder named ‘Books’:
 
@@ -87,11 +90,11 @@ Run the commands below to seed the database add momgodb repository to your Ubunt
 
 - In the Books directory, Initialize npm project:
 
-  npm init
+  `npm init`
 
 - Add a file to it named server.js:
 
-   vi server.js
+   `vi server.js`
 
 Copy and paste the web server code below into the server.js file:
 
@@ -201,16 +204,16 @@ AngularJS provides a web framework for creating dynamic views in your web applic
 
 - Change the directory back to ‘Books’
 
-    cd ../..
+    `cd ../..`
 
 
 - Create a folder named public
 
-   mkdir public && cd public
+   `mkdir public && cd public`
  
  - Add a file named script.js
 
-    vi script.js
+    `vi script.js`
 
 - Copy and paste the Code below (controller configuration defined) into the script.js file.
 
@@ -256,7 +259,7 @@ AngularJS provides a web framework for creating dynamic views in your web applic
 
 - In public folder, create a file named index.html:
 
-   vi index.html
+   `vi index.html`
 
 - Cpoy and paste the code below into index.html file:
 
@@ -313,11 +316,11 @@ AngularJS provides a web framework for creating dynamic views in your web applic
 
 - Change the directory back up to Books:
 
-   cd ..
+   `cd ..`
 
 - Start the server by running this command:
 
-   node server.js
+   `node server.js`
    
  - You should see something like the screenshot below printed on your terminal:
 
